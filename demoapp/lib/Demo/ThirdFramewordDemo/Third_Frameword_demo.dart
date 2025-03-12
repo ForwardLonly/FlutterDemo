@@ -1,3 +1,4 @@
+import 'package:demoapp/Demo/ThirdFramewordDemo/Chewie_demo.dart';
 import 'package:demoapp/Demo/ThirdFramewordDemo/Connectivity_demo.dart';
 import 'package:demoapp/Demo/ThirdFramewordDemo/DeviceInfo_demo.dart';
 import 'package:demoapp/Demo/ThirdFramewordDemo/UrlLaunch_demo.dart';
@@ -52,7 +53,9 @@ class ThirdFramewordDemo extends StatelessWidget {
           )),
           Center(child: ElevatedButton(
             onPressed: (){
-              
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ChewieDemo();
+              }));
             }, 
             child: Text("其他的播放器:chewie")
           )),
