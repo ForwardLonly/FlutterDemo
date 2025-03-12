@@ -3,6 +3,7 @@ import 'package:demoapp/Demo/Hero_demo.dart';
 import 'package:demoapp/Demo/Http/http_demo.dart';
 import 'package:demoapp/Demo/NewsDemo/News_demo.dart';
 import 'package:demoapp/Demo/Steam_demo.dart';
+import 'package:demoapp/Demo/ThirdFramewordDemo/Third_Frameword_demo.dart';
 import 'package:flutter/material.dart';
 import 'CheckBox_demo.dart';
 import 'RadioDemo.dart';
@@ -32,6 +33,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ListItem(title: "设备信息 + 网络检测 + 外部应用跳转", page: ThirdFramewordDemo()),
           ListItem(title: "新闻列表上下拉加载 + 加载html数据", page: NewsDemo()),
           ListItem(title: "SteamDemo", page: SteamDemo()),
           ListItem(title: "HeroDemo", page: HeroDemo()),
