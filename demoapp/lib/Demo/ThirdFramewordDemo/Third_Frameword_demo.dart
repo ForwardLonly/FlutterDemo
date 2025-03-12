@@ -1,6 +1,7 @@
 import 'package:demoapp/Demo/ThirdFramewordDemo/Connectivity_demo.dart';
 import 'package:demoapp/Demo/ThirdFramewordDemo/DeviceInfo_demo.dart';
 import 'package:demoapp/Demo/ThirdFramewordDemo/UrlLaunch_demo.dart';
+import 'package:demoapp/Demo/ThirdFramewordDemo/Video_Player_demo.dart';
 import 'package:flutter/material.dart';
 
 class ThirdFramewordDemo extends StatelessWidget {
@@ -40,6 +41,20 @@ class ThirdFramewordDemo extends StatelessWidget {
               }));
             }, 
             child: Text("外部app应用跳转")
+          )),
+          Center(child: ElevatedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return VideoPlayerDemo();
+              }));
+            }, 
+            child: Text("官方的播放器：vidio_play")
+          )),
+          Center(child: ElevatedButton(
+            onPressed: (){
+              
+            }, 
+            child: Text("其他的播放器:chewie")
           )),
           
         ],
