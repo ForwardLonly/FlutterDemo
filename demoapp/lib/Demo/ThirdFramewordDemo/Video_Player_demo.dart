@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -18,7 +17,9 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
   bool _isPlaying = false;
   double _progress = 0.0;
 
+  // 添加播放状态的订阅，避免每次调用setState 重刷页面
   late StreamController _isPlayingController;
+  // 添加播放进度的订阅，避免每次调用setState 重刷页面
   late StreamController _progressController;
 
   @override
@@ -38,7 +39,7 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
       _videoPlayerController.play();
       _isPlaying = true;
       setState(() {
-        print("111111");
+
       });
     });
   }
@@ -52,6 +53,7 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
     super.dispose();
   }
 
+  // 自定义播放器的监听回调的方法
   void _onVideoChange() {
     print("播放器的监听回调");
       if (_videoPlayerController.value.isInitialized) {
@@ -89,7 +91,9 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
         aspectRatio: _videoPlayerController.value.aspectRatio,
         child: Stack(
           children: [
+            // 播放器
             VideoPlayer(_videoPlayerController),
+            // 添加进度条
             Align(
               alignment: Alignment.bottomCenter,
               child: _progressWidget(),
@@ -98,18 +102,19 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
         )
       );
     } else {
+      // loading视图
       return CircularProgressIndicator();
     }
   }
 
   // 进度条
   Widget _progressWidget() {
-    
+    // 进度条变化比较频繁：用 StreamBuilder 减少内存的消耗
     return  StreamBuilder(
       stream: _progressController.stream, 
       builder: (context, snapshot) {
         print("更新进度条");
-        return Container(
+        return SizedBox(
           height: 35,
           child: Slider(
             value: _progress,
@@ -149,6 +154,7 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
           }
           _isPlayingController.add(_isPlaying);
         },
+        // 这个按钮变化比较频繁：用 StreamBuilder 减少内存的消耗
         child: StreamBuilder(
           stream: _isPlayingController.stream, 
           builder: (context, snapshot) {

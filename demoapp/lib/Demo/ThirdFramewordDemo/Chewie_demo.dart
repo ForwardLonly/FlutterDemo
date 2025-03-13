@@ -34,18 +34,18 @@ class _ChewieDemoState extends State<ChewieDemo> {
       "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
     );
     _videoPlayerController = VideoPlayerController.networkUrl(url);
-    _videoPlayerController.initialize().then((_){
-      _chewieController = ChewieController(
-        videoPlayerController: _videoPlayerController,
-        aspectRatio: _videoPlayerController.value.aspectRatio,
-        autoPlay: true,
-        looping: false
-      );
-      setState(() {
-        
-      });
-    });
+    await _videoPlayerController.initialize();
+
+    _chewieController = ChewieController(
+      videoPlayerController: _videoPlayerController,
+      aspectRatio: _videoPlayerController.value.aspectRatio,
+      autoPlay: true,
+      looping: false
+    );
     
+    setState(() {
+      
+    });
   }
 
   @override

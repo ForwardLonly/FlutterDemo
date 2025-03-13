@@ -1,6 +1,7 @@
 import 'package:demoapp/Demo/ThirdFramewordDemo/Chewie_demo.dart';
 import 'package:demoapp/Demo/ThirdFramewordDemo/Connectivity_demo.dart';
 import 'package:demoapp/Demo/ThirdFramewordDemo/DeviceInfo_demo.dart';
+import 'package:demoapp/Demo/ThirdFramewordDemo/Image_Picker_demo.dart';
 import 'package:demoapp/Demo/ThirdFramewordDemo/UrlLaunch_demo.dart';
 import 'package:demoapp/Demo/ThirdFramewordDemo/Video_Player_demo.dart';
 import 'package:flutter/material.dart';
@@ -58,6 +59,14 @@ class ThirdFramewordDemo extends StatelessWidget {
               }));
             }, 
             child: Text("其他的播放器:chewie")
+          )),
+          Center(child: ElevatedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ImagePickerDemo();
+              }));
+            }, 
+            child: Text("图片选择器")
           )),
           
         ],
