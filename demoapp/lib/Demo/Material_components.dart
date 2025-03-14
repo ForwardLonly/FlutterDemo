@@ -33,7 +33,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ListItem(title: "设备信息 + 网络检测 + 外部应用跳转", page: ThirdFramewordDemo()),
+          ListItem(title: "设备信息 + 网络检测 + 外部应用跳转 + 播放器 + 图片选择器 + 扫描二维码", page: ThirdFramewordDemo()),
           ListItem(title: "新闻列表上下拉加载 + 加载html数据", page: NewsDemo()),
           ListItem(title: "SteamDemo", page: SteamDemo()),
           ListItem(title: "HeroDemo", page: HeroDemo()),

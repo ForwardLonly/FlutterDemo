@@ -57,7 +57,7 @@
 	<key>NSPhotoLibraryUsageDescription</key> 
 		<string>应用需要访问相册读取文件</string> 
 	<key>NSCameraUsageDescription</key> 
-		<string>应用需要访问相机拍照</string> 
+		<string>应用需要访问相机拍照、扫描二维码</string> 
 	<key>NSMicrophoneUsageDescription</key> 
 		<string>应用需要访问麦克风录制视频</string>
 </dict>
