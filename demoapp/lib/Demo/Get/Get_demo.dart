@@ -1,4 +1,4 @@
-import 'package:demoapp/Demo/Get/CountController.dart';
+import 'package:demoapp/Demo/Get/Controller/CountController.dart';
 import 'package:demoapp/Router/AppRouter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -127,6 +127,15 @@ class _GetDemoState extends State<GetDemo> {
                 ElevatedButton(onPressed: _getXEasyDataStatus, child: Text("简单状态管理")),
               ],
             ),
+          )),
+          // 状态管理之数据改变
+          Center(child: Padding(
+            padding: EdgeInsets.all(5),
+            child: ElevatedButton(onPressed: (){
+              Get.toNamed(Approuter.getShopPageName, arguments: {
+                "id": "222222"
+              });
+            }, child: Text("GetView的使用")),
           )),
         ],
       ),

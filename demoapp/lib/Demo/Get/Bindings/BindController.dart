@@ -1,4 +1,4 @@
-import 'package:demoapp/Demo/Get/CountController.dart';
+import 'package:demoapp/Demo/Get/Controller/CountController.dart';
 import 'package:get/get.dart';
 
 class Bindcontroller implements Bindings {

@@ -1,4 +1,4 @@
-import 'package:demoapp/Demo/Get/CountController.dart';
+import 'package:demoapp/Demo/Get/Controller/CountController.dart';
 import 'package:demoapp/Router/AppRouter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

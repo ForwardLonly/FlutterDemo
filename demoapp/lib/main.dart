@@ -1,4 +1,4 @@
-import 'package:demoapp/Demo/Get/BindController.dart';
+import 'package:demoapp/Demo/Get/Bindings/BindController.dart';
 import 'package:demoapp/Router/AppRouter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
