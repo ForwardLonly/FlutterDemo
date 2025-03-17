@@ -1,3 +1,4 @@
+import 'package:demoapp/Demo/Get/BindController.dart';
 import 'package:demoapp/Router/AppRouter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,6 +23,8 @@ class MyApp extends StatelessWidget {
          backgroundColor: Colors.yellow, // 设置导航栏颜色为蓝色
         )
       ),
+       // 绑定控制器
+      initialBinding: Bindcontroller(),
       // 设置初始化页面
       initialRoute: "/",
       // 设置路由信息

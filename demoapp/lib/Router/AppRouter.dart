@@ -1,4 +1,7 @@
+import 'package:demoapp/Demo/Get/BindController.dart';
 import 'package:demoapp/Demo/Get/Get_DataStatus_demo.dart';
+import 'package:demoapp/Demo/Get/Get_EasyStatusSecond_demo.dart';
+import 'package:demoapp/Demo/Get/Get_EasyStatus_demo.dart';
 import 'package:demoapp/main.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +18,8 @@ class Approuter {
   static String shopName = "/shop";
   static String shopMiddleName = "/shopMiddle";
   static String getDataStatusName = "/getDatastatus";
+  static String getEasyStatueName = "/getEasyStatue";
+  static String getEasyStatueTwoName = "/getEasyStatueTwo";
 
   static List<GetPage> appRouterPages() {
     return [
@@ -24,6 +29,8 @@ class Approuter {
       GetPage(name: shopName, page: () => GetShopDemo()),
       GetPage(name: shopMiddleName, page: () => GetShopDemo(), middlewares: [GetShopmiddlewareDemo()]),
       GetPage(name: getDataStatusName, page: () => GetDatastatusDemo()),
+      GetPage(name: getEasyStatueName, page: () => GetEasystatusDemo(), binding: Bindcontroller()),
+      GetPage(name: getEasyStatueTwoName, page: () => GetEasystatusSecondDemo()),
     ];
   }
   

@@ -1,3 +1,4 @@
+import 'package:demoapp/Demo/Get/CountController.dart';
 import 'package:demoapp/Router/AppRouter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -73,9 +74,14 @@ class _GetDemoState extends State<GetDemo> {
     Get.toNamed(Approuter.loginName);
   }
 
-  // getX 数据管理
+  // getX 响应式数据管理
   void _getXDataStatus() {
     Get.toNamed(Approuter.getDataStatusName);
+  }
+
+  // getX 简单式数据管理
+  void _getXEasyDataStatus() {
+    Get.toNamed(Approuter.getEasyStatueName);
   }
 
   @override
@@ -109,7 +115,18 @@ class _GetDemoState extends State<GetDemo> {
           // 状态管理之数据改变
           Center(child: Padding(
             padding: EdgeInsets.all(5),
-            child: ElevatedButton(onPressed: _getXDataStatus, child: Text("状态管理之数据改变")),
+            child: ElevatedButton(onPressed: _getXDataStatus, child: Text("响应式状态管理")),
+          )),
+           // 简单状态管理
+          Center(child: Padding(
+            padding: EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 20.0,
+              children: [
+                ElevatedButton(onPressed: _getXEasyDataStatus, child: Text("简单状态管理")),
+              ],
+            ),
           )),
         ],
       ),
