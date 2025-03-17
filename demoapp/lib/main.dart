@@ -1,4 +1,6 @@
+import 'package:demoapp/Router/AppRouter.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'Demo/Explore_demo.dart';
 import 'Demo/History_demo.dart';
 import 'Demo/MyView_demo.dart';
@@ -12,14 +14,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return  GetMaterialApp(
       debugShowCheckedModeBanner: true,
-      home: Home(),
+      // home: Home(),
       theme: ThemeData(
        appBarTheme: AppBarTheme(
          backgroundColor: Colors.yellow, // 设置导航栏颜色为蓝色
         )
       ),
+      // 设置初始化页面
+      initialRoute: "/",
+      // 设置路由信息
+      getPages: Approuter.appRouterPages() ,
+      // 设置跳转动画
+      defaultTransition: Transition.rightToLeft,
     );
   }
 }

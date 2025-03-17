@@ -1,4 +1,5 @@
 import 'package:demoapp/Demo/Chip_demo.dart';
+import 'package:demoapp/Demo/Get/Get_demo.dart';
 import 'package:demoapp/Demo/Hero_demo.dart';
 import 'package:demoapp/Demo/Http/http_demo.dart';
 import 'package:demoapp/Demo/NewsDemo/News_demo.dart';
@@ -33,6 +34,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ListItem(title: "GetXDemo", page: GetDemo()),
           ListItem(title: "设备信息 + 网络检测 + 外部应用跳转 + 播放器 + 图片选择器 + 扫描二维码", page: ThirdFramewordDemo()),
           ListItem(title: "新闻列表上下拉加载 + 加载html数据", page: NewsDemo()),
           ListItem(title: "SteamDemo", page: SteamDemo()),
